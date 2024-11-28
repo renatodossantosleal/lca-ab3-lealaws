@@ -151,7 +151,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
     header={
       <Header variant="h4" info={<InfoLink onFollow={() => setToolsOpen(true)} />}>
         <div className="flex items-center">
-          <div>Call Attributes</div>
+          <div>Detalhes da Chamada</div>
           <div className="btn-download-right">
             <Button
               iconName="download"
@@ -167,7 +167,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Call ID</strong>
+            <strong>ID da Chamada</strong>
           </Box>
           <div>{item.callId}</div>
         </div>
@@ -176,7 +176,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Agent</strong>
+            <strong>Assistente</strong>
           </Box>
           <div>{item.agentId}</div>
         </div>
@@ -185,7 +185,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Initiation Timestamp</strong>
+            <strong>Hora de Início</strong>
           </Box>
           <div>{item.initiationTimeStamp}</div>
         </div>
@@ -194,7 +194,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Last Update Timestamp</strong>
+            <strong>Última Atualização</strong>
           </Box>
           <div>{item.updatedAt}</div>
         </div>
@@ -203,7 +203,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Duration</strong>
+            <strong>Duração</strong>
           </Box>
           <div>{item.conversationDurationTimeStamp}</div>
         </div>
@@ -212,7 +212,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>Caller Phone Number</strong>
+            <strong>Tel. Cliente</strong>
           </Box>
           <div>{item.callerPhoneNumber}</div>
         </div>
@@ -221,7 +221,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
       <SpaceBetween size="xs">
         <div>
           <Box margin={{ bottom: 'xxxs' }} color="text-label">
-            <strong>System Phone Number</strong>
+            <strong>Tel. Sistema</strong>
           </Box>
           <div>{item.systemPhoneNumber}</div>
         </div>
@@ -259,7 +259,7 @@ const CallAttributes = ({ item, setToolsOpen }) => (
         <SpaceBetween size="xs">
           <div>
             <Box margin={{ bottom: 'xxxs' }} color="text-label">
-              <strong>Recording Audio</strong>
+              <strong>Gravação</strong>
             </Box>
             <RecordingPlayer recordingUrl={item.recordingUrl} />
           </div>
@@ -309,7 +309,7 @@ const CallCategories = ({ item }) => {
             </Link>
           }
         >
-          Call Categories
+          Categorias
         </Header>
       }
     >
@@ -337,7 +337,7 @@ const CallSummary = ({ item }) => {
             </Link>
           }
         >
-          Call Summary
+          Insights de GenAI
         </Header>
       }
     >
@@ -347,7 +347,7 @@ const CallSummary = ({ item }) => {
         <Tabs
           tabs={[
             {
-              label: 'Transcript Summary',
+              label: 'Resumo da Transcrição',
               id: 'summary',
               content: (
                 <div>
@@ -365,14 +365,14 @@ const CallSummary = ({ item }) => {
         <Tabs
           tabs={[
             {
-              label: 'Issues',
+              label: 'Problemas Encontrados',
               id: 'issues',
               content: (
                 <div>
                   {/* eslint-disable-next-line react/no-array-index-key */}
                   <TextContent color="gray" className="issue-detected">
                     <ReactMarkdown rehypePlugins={[rehypeRaw]}>
-                      {item.issuesDetected ?? 'No issue detected'}
+                      {item.issuesDetected ?? 'Nenhum problema detectado'}
                     </ReactMarkdown>
                   </TextContent>
                 </div>
@@ -866,7 +866,7 @@ const getAgentAssistPanel = (item, collapseSentiment) => {
               </Link>
             }
           >
-            Agent Assist Bot
+            IA de Ajuda
           </Header>
         }
       >
@@ -986,7 +986,7 @@ const CallTranscriptContainer = ({
                   checked={autoScroll}
                   disabled={autoScrollDisabled}
                 />
-                <span>Auto Scroll</span>
+                {/* <span>Auto Scroll</span> */}
                 <Toggle
                   onChange={({ detail }) => setAgentTranscript(detail.checked)}
                   checked={agentTranscript}
@@ -996,13 +996,13 @@ const CallTranscriptContainer = ({
                   onChange={({ detail }) => setTranslateOn(detail.checked)}
                   checked={translateOn}
                 />
-                <span>Enable Translation</span>
+                {/* <span>Enable Translation</span> */}
                 {languageChoices()}
               </SpaceBetween>
             }
           >
             <div className="flex items-center">
-              <div> Call Transcript </div>
+              <div> Transcrição da Chamada </div>
               <div className="btn-download-right">
                 <Button
                   iconName="download"
@@ -1066,7 +1066,7 @@ const VoiceToneContainer = ({
           </SpaceBetween>
         }
       >
-        Voice Tone Analysis
+        Análise do Tom de Voz
       </Header>
     }
   >
@@ -1107,7 +1107,7 @@ const CallStatsContainer = ({
           </SpaceBetween>
         }
       >
-        Call Sentiment Analysis
+        Análise de Sentimento da Chamada
       </Header>
     }
   >
@@ -1124,7 +1124,7 @@ const CallStatsContainer = ({
           <SpaceBetween size="xs">
             <div>
               <Box margin={{ bottom: 'xxxs' }} color="text-label">
-                <strong>Caller Avg Sentiment:</strong>
+                <strong>Média Sent. Cliente:</strong>
               </Box>
               <div>
                 <SentimentIcon sentiment={item.callerSentimentLabel} />
@@ -1138,7 +1138,7 @@ const CallStatsContainer = ({
           <SpaceBetween size="xs">
             <div>
               <Box margin={{ bottom: 'xxxs' }} color="text-label">
-                <strong>Caller Sentiment Trend:</strong>
+                <strong>Tendência do Sentimento do Cliente:</strong>
               </Box>
               <div>
                 <SentimentTrendIcon trend={item.callerSentimentTrendLabel} />
@@ -1148,7 +1148,7 @@ const CallStatsContainer = ({
           <SpaceBetween size="xs">
             <div>
               <Box margin={{ bottom: 'xxxs' }} color="text-label">
-                <strong>Agent Avg Sentiment:</strong>
+                <strong>Média Sent. Atendente:</strong>
               </Box>
               <div>
                 <SentimentIcon sentiment={item.agentSentimentLabel} />
@@ -1162,7 +1162,7 @@ const CallStatsContainer = ({
           <SpaceBetween size="xs">
             <div>
               <Box margin={{ bottom: 'xxxs' }} color="text-label">
-                <strong>Agent Sentiment Trend:</strong>
+                <strong>Tendência do Sentimento do Atendente:</strong>
               </Box>
               <div>
                 <SentimentTrendIcon trend={item.agentSentimentTrendLabel} />

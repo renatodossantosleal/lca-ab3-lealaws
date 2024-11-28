@@ -138,8 +138,8 @@ export const SentimentFluctuationChart = ({ item, callTranscriptPerCallId }) => 
       }
       statusType="finished"
       xScaleType="time"
-      xTitle="Time"
-      yTitle="Sentiment Fluctuation"
+      xTitle="Tempo"
+      yTitle="Flutuação de Sentimento"
     />
   );
 };
@@ -204,8 +204,8 @@ export const SentimentPerQuarterChart = ({ item, callTranscriptPerCallId }) => {
       }
       statusType="finished"
       xScaleType="time"
-      xTitle="Time"
-      yTitle="Average Sentiment Per Quarter"
+      xTitle="Tempo"
+      yTitle="Sentimento médio por Quartil"
     />
   );
 };

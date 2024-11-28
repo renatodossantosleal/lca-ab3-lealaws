@@ -220,7 +220,7 @@ const useCallsGraphQlApi = ({ initialPeriodsToLoad = CALL_LIST_SHARDS_PER_DAY * 
 
     const listRejected = listCallDateShardResolutions.filter((r) => r.status === 'rejected');
     if (listRejected.length) {
-      setErrorMessage('failed to list calls - please try again later');
+      setErrorMessage('Não foi possível listar as chamadas. Tente novamente mais tarde.');
       logger.error('list call promises rejected', listRejected);
     }
 
@@ -242,7 +242,7 @@ const useCallsGraphQlApi = ({ initialPeriodsToLoad = CALL_LIST_SHARDS_PER_DAY * 
 
     const listRejected = listCallDateHourResolutions.filter((r) => r.status === 'rejected');
     if (listRejected.length) {
-      setErrorMessage('failed to list calls - please try again later');
+      setErrorMessage('Não foi possível listar as chamadas. Tente novamente mais tarde.');
       logger.error('list call promises rejected', listRejected);
     }
 
@@ -263,7 +263,7 @@ const useCallsGraphQlApi = ({ initialPeriodsToLoad = CALL_LIST_SHARDS_PER_DAY * 
 
     const listRejected = listCallsResolutions.filter((r) => r.status === 'rejected');
     if (listRejected.length) {
-      setErrorMessage('failed to list calls - please try again later');
+      setErrorMessage('Não foi possível listar as chamadas. Tente novamente mais tarde.');
       logger.error('list call promises rejected', listRejected);
     }
 
@@ -359,7 +359,7 @@ const useCallsGraphQlApi = ({ initialPeriodsToLoad = CALL_LIST_SHARDS_PER_DAY * 
       }
     } catch (error) {
       setIsCallsListLoading(false);
-      setErrorMessage('failed to list calls - please try again later');
+      setErrorMessage('Não foi possível listar as chamadas. Tente novamente mais tarde.');
       logger.error('error obtaining call list', error);
     }
   };

@@ -25,8 +25,8 @@ export const SPLIT_PANEL_I18NSTRINGS = {
 };
 
 const EMPTY_PANEL_CONTENT = {
-  header: '0 calls selected',
-  body: 'Select a call to see its details.',
+  header: '0 chamadas selecionadas',
+  body: 'Selecione uma chamada para ver seus detalhes.',
 };
 
 const getPanelContentSingle = ({ items, setToolsOpen, callTranscriptPerCallId }) => {
@@ -84,8 +84,8 @@ const getPanelContentMultiple = ({ items, setToolsOpen, callTranscriptPerCallId 
 const getPanelContentComparison = ({ items }) => {
   if (!items.length) {
     return {
-      header: '0 calls selected',
-      body: 'Select a call to see its details. Select multiple calls to compare.',
+      header: '0 chamadas selecionadas',
+      body: 'Selecione uma chamada para ver seus detalhes. Selecione várias chamadas para comparar.',
     };
   }
 

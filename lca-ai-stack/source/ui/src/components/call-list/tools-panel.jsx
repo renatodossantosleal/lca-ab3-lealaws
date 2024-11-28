@@ -6,12 +6,9 @@ import HelpPanel from '@cloudscape-design/components/help-panel';
 const header = <h2>Calls</h2>;
 const content = (
   <>
-    <p>
-      View a list of calls and related information such as phone number, initiation time, sentiment
-      and duration.
-    </p>
-    <p>Use the search bar to filter on any field.</p>
-    <p>To drill down even further into the details, select an individual call.</p>
+    <p>Veja uma lista de chamadas e informações relacionadas</p>
+    <p>Use a barra de pesquisa para filtrar por qualquer campo.</p>
+    <p>Para mais detalhes selecione uma chamada específica</p>
   </>
 );
 

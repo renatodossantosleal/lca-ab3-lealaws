@@ -9,37 +9,37 @@ const style = {
   verticalAlign: 'middle',
 };
 
-export const SentimentIcon = ({ sentiment = 'NEUTRAL', size = '1.5em' }) => {
-  if (sentiment === 'POSITIVE') {
+export const SentimentIcon = ({ sentiment = 'NEUTRO', size = '1.5em' }) => {
+  if (sentiment === 'POSITIVO') {
     return <FiSmile style={style} color="green" size={size} title="positive" />;
   }
 
-  if (sentiment === 'NEGATIVE') {
+  if (sentiment === 'NEGATIVO') {
     return <FiFrown style={style} color="red" size={size} title="negative" />;
   }
 
   return <FiMeh style={style} color="grey" size={size} tille={sentiment.toLowerCase()} />;
 };
 SentimentIcon.defaultProps = {
-  sentiment: 'NEUTRAL',
+  sentiment: 'NEUTRO',
   size: '1.5em',
 };
 SentimentIcon.propTypes = {
-  sentiment: PropTypes.oneOf(['POSITIVE', 'NEGATIVE', 'NEUTRAL', 'MIXED']),
+  sentiment: PropTypes.oneOf(['POSITIVO', 'NEGATIVO', 'NEUTRO', 'MIX']),
   size: PropTypes.string,
 };
 
 const getSentimentColor = (sentiment) => {
-  if (sentiment === 'POSITIVE') {
+  if (sentiment === 'POSITIVO') {
     return 'green';
   }
-  if (sentiment === 'NEGATIVE') {
+  if (sentiment === 'NEGATIVO') {
     return 'red';
   }
   return 'gray';
 };
 
-export const SentimentIndicator = ({ sentiment = 'NEUTRAL' }) => (
+export const SentimentIndicator = ({ sentiment = 'NEUTRO' }) => (
   <div>
     <span>
       <SentimentIcon size="1.25em" sentiment={sentiment} />
@@ -50,8 +50,8 @@ export const SentimentIndicator = ({ sentiment = 'NEUTRAL' }) => (
   </div>
 );
 SentimentIndicator.defaultProps = {
-  sentiment: 'NEUTRAL',
+  sentiment: 'NEUTRO',
 };
 SentimentIndicator.propTypes = {
-  sentiment: PropTypes.oneOf(['POSITIVE', 'NEGATIVE', 'NEUTRAL', 'MIXED']),
+  sentiment: PropTypes.oneOf(['POSITIVO', 'NEGATIVO', 'NEUTRO', 'MIX']),
 };

@@ -84,7 +84,7 @@ const CallList = () => {
       {...collectionProps}
       header={
         <CallsCommonHeader
-          resourceName="Calls"
+          resourceName="Chamadas"
           selectedItems={collectionProps.selectedItems}
           totalItems={callList}
           updateTools={() => setToolsOpen(true)}
@@ -98,14 +98,14 @@ const CallList = () => {
       columnDefinitions={COLUMN_DEFINITIONS_MAIN}
       items={items}
       loading={isCallsListLoading}
-      loadingText="Loading calls"
+      loadingText="Carregando as chamadas"
       selectionType="multi"
       ariaLabels={SELECTION_LABELS}
       filter={
         <TextFilter
           {...filterProps}
-          filteringAriaLabel="Filter calls"
-          filteringPlaceholder="Find calls"
+          filteringAriaLabel="Filtre chamadas"
+          filteringPlaceholder="Encontre chamadas"
           countText={getFilterCounterText(filteredItemsCount)}
         />
       }
