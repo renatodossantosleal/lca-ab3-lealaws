@@ -11,7 +11,7 @@ const dismissedInitialNotificationsStorageKey = 'dismissedInitialNotifications';
 const initialNotifications = [
   {
     type: 'info',
-    content: 'Welcome to Live Call Analytics with Agent Assist',
+    content: 'Bem-vindo ao Módulo de Inteligência da Octank',
     dismissible: true,
     dismissLabel: 'Dismiss message',
     id: 'welcome-1',

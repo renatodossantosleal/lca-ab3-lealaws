@@ -3,12 +3,12 @@
 
 export const getWeightedSentimentLabel = (sentimentWeighted) => {
   if (sentimentWeighted > 0) {
-    return 'POSITIVE';
+    return 'POSITIVO';
   }
   if (sentimentWeighted < 0) {
-    return 'NEGATIVE';
+    return 'NEGATIVO';
   }
-  return 'NEUTRAL';
+  return 'NEUTRO';
 };
 
 export const getSentimentTrendLabel = (sentimentByQuarter) => {

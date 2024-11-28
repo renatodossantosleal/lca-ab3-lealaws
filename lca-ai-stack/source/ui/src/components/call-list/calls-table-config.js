@@ -26,10 +26,10 @@ export const KEY_COLUMN_ID = 'callId';
 export const COLUMN_DEFINITIONS_MAIN = [
   {
     id: KEY_COLUMN_ID,
-    header: 'Call ID',
+    header: 'ID',
     cell: (item) => <Link href={`#${CALLS_PATH}/${item.callId}`}>{item.callId}</Link>,
     sortingField: 'callId',
-    width: 325,
+    width: 200,
   },
   {
     id: 'alerts',
@@ -42,13 +42,13 @@ export const COLUMN_DEFINITIONS_MAIN = [
   },
   {
     id: 'agentId',
-    header: 'Agent',
+    header: 'Agente',
     cell: (item) => item.agentId,
     sortingField: 'agentId',
   },
   {
     id: 'initiationTimeStamp',
-    header: 'Initiation Timestamp',
+    header: 'Hora de Início',
     cell: (item) => item.initiationTimeStamp,
     sortingField: 'initiationTimeStamp',
     isDescending: false,
@@ -56,7 +56,7 @@ export const COLUMN_DEFINITIONS_MAIN = [
   },
   {
     id: 'summary',
-    header: 'Summary',
+    header: 'Resumo',
     cell: (item) => {
       const summary = getTextOnlySummary(item.callSummaryText);
       return (
@@ -75,7 +75,7 @@ export const COLUMN_DEFINITIONS_MAIN = [
   },
   {
     id: 'callerPhoneNumber',
-    header: 'Caller Phone Number',
+    header: 'Tel. Cliente',
     cell: (item) => item.callerPhoneNumber,
     sortingField: 'callerPhoneNumber',
     width: 175,
@@ -93,31 +93,31 @@ export const COLUMN_DEFINITIONS_MAIN = [
   },
   {
     id: 'callerSentiment',
-    header: 'Caller Sentiment',
+    header: 'Sentimento Cliente',
     cell: (item) => <SentimentIndicator sentiment={item?.callerSentimentLabel} />,
     sortingField: 'callerSentimentLabel',
   },
   {
     id: 'callerSentimentTrend',
-    header: 'Caller Sentiment Trend',
+    header: 'Sentimento Cliente Trend',
     cell: (item) => <SentimentTrendIndicator trend={item?.callerSentimentTrendLabel} />,
     sortingField: 'callerSentimentTrendLabel',
   },
   {
     id: 'agentSentiment',
-    header: 'Agent Sentiment',
+    header: 'Sentimento Agente',
     cell: (item) => <SentimentIndicator sentiment={item?.agentSentimentLabel} />,
     sortingField: 'agentSentimentLabel',
   },
   {
     id: 'agentSentimentTrend',
-    header: 'Agent Sentiment Trend',
+    header: 'Sentimento Agente Trend',
     cell: (item) => <SentimentTrendIndicator trend={item?.agentSentimentTrendLabel} />,
     sortingField: 'agentSentimentTrendLabel',
   },
   {
     id: 'conversationDuration',
-    header: 'Duration',
+    header: 'Duração',
     cell: (item) => item.conversationDurationTimeStamp,
     sortingField: 'conversationDurationTimeStamp',
   },
@@ -144,7 +144,7 @@ export const COLUMN_DEFINITIONS_MAIN = [
   },
   {
     id: 'callCategories',
-    header: 'Categories',
+    header: 'Categorias',
     cell: (item) => <CategoryPills categories={item.callCategories} />,
     sortingField: 'callCategoryCount',
     width: 200,
@@ -160,9 +160,9 @@ export const SELECTION_LABELS = {
 };
 
 const PAGE_SIZE_OPTIONS = [
-  { value: 10, label: '10 Calls' },
-  { value: 30, label: '30 Calls' },
-  { value: 50, label: '50 Calls' },
+  { value: 10, label: '10 Chamadas' },
+  { value: 30, label: '30 Chamadas' },
+  { value: 50, label: '50 Chamadas' },
 ];
 
 const VISIBLE_CONTENT_OPTIONS = [
@@ -170,19 +170,19 @@ const VISIBLE_CONTENT_OPTIONS = [
     label: 'Call list properties',
     options: [
       { id: 'callId', label: 'Call ID', editable: false },
-      { id: 'alerts', label: 'Alerts' },
-      { id: 'agentId', label: 'Agent' },
-      { id: 'initiationTimeStamp', label: 'Initiation Timestamp' },
-      { id: 'callerPhoneNumber', label: 'Caller Phone Number' },
+      { id: 'alerts', label: 'Alertas' },
+      { id: 'agentId', label: 'Agente' },
+      { id: 'initiationTimeStamp', label: 'Hora de Início' },
+      { id: 'callerPhoneNumber', label: 'Tel. Cliente' },
       { id: 'recordingStatus', label: 'Status' },
-      { id: 'summary', label: 'Summary' },
-      { id: 'callerSentiment', label: 'Caller Sentiment' },
-      { id: 'callerSentimentTrend', label: 'Caller Sentiment Trend' },
-      { id: 'agentSentiment', label: 'Agent Sentiment' },
-      { id: 'agentSentimentTrend', label: 'Agent Sentiment Trend' },
-      { id: 'conversationDuration', label: 'Duration' },
+      { id: 'summary', label: 'Resumo' },
+      { id: 'callerSentiment', label: 'Sentimento Cliente' },
+      { id: 'callerSentimentTrend', label: 'Sentimento Cliente Trend' },
+      { id: 'agentSentiment', label: 'Sentimento Agente' },
+      { id: 'agentSentimentTrend', label: 'Sentimento Agente Trend' },
+      { id: 'conversationDuration', label: 'Duração' },
       { id: 'menu', label: 'Menu' },
-      { id: 'callCategories', label: 'Categories' },
+      { id: 'callCategories', label: 'Categorias' },
     ],
   },
 ];
@@ -216,21 +216,21 @@ export const CallsPreferences = ({
 }) => (
   <CollectionPreferences
     title="Preferences"
-    confirmLabel="Confirm"
-    cancelLabel="Cancel"
+    confirmLabel="Confirmar"
+    cancelLabel="Cancelar"
     disabled={disabled}
     preferences={preferences}
     onConfirm={({ detail }) => setPreferences(detail)}
     pageSizePreference={{
-      title: 'Page size',
+      title: 'Quantidade de Chamadas',
       options: pageSizeOptions,
     }}
-    wrapLinesPreference={{
-      label: 'Wrap lines',
-      description: 'Check to see all the text and wrap the lines',
-    }}
+    // wrapLinesPreference={{
+    //   label: 'Wrap lines',
+    //   description: 'Check to see all the text and wrap the lines',
+    // }}
     visibleContentPreference={{
-      title: 'Select visible columns',
+      title: 'Selecione as colunas visíveis',
       options: visibleContentOptions,
     }}
   />
@@ -242,11 +242,11 @@ const TIME_PERIOD_DROPDOWN_CONFIG = {
   'refresh-2h': { count: 0.5, text: '2 hrs' },
   'refresh-4h': { count: 1, text: '4 hrs' },
   'refresh-8h': { count: CALL_LIST_SHARDS_PER_DAY / 3, text: '8 hrs' },
-  'refresh-1d': { count: CALL_LIST_SHARDS_PER_DAY, text: '1 day' },
-  'refresh-2d': { count: 2 * CALL_LIST_SHARDS_PER_DAY, text: '2 days' },
-  'refresh-1w': { count: 7 * CALL_LIST_SHARDS_PER_DAY, text: '1 week' },
-  'refresh-2w': { count: 14 * CALL_LIST_SHARDS_PER_DAY, text: '2 weeks' },
-  'refresh-1m': { count: 30 * CALL_LIST_SHARDS_PER_DAY, text: '30 days' },
+  'refresh-1d': { count: CALL_LIST_SHARDS_PER_DAY, text: '1 dia' },
+  'refresh-2d': { count: 2 * CALL_LIST_SHARDS_PER_DAY, text: '2 dias' },
+  'refresh-1w': { count: 7 * CALL_LIST_SHARDS_PER_DAY, text: '1 semana' },
+  'refresh-2w': { count: 14 * CALL_LIST_SHARDS_PER_DAY, text: '2 semanas' },
+  'refresh-1m': { count: 30 * CALL_LIST_SHARDS_PER_DAY, text: '30 dias' },
 };
 const TIME_PERIOD_DROPDOWN_ITEMS = Object.keys(TIME_PERIOD_DROPDOWN_CONFIG).map((k) => ({
   id: k,
@@ -278,7 +278,7 @@ export const CallsCommonHeader = ({ resourceName = 'Calls', ...props }) => {
             onItemClick={onPeriodToLoadChange}
             items={TIME_PERIOD_DROPDOWN_ITEMS}
           >
-            {`Load: ${periodText}`}
+            {`Período: ${periodText}`}
           </ButtonDropdown>
           <Button
             iconName="refresh"

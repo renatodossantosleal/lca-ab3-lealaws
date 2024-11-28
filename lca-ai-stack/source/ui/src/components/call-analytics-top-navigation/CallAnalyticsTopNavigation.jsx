@@ -36,14 +36,14 @@ const SignOutModal = ({ visible, setVisible }) => {
               Cancel
             </Button>
             <Button variant="primary" onClick={() => signOut()}>
-              Sign Out
+              Sair
             </Button>
           </SpaceBetween>
         </Box>
       }
-      header="Sign Out"
+      header="Sair"
     >
-      Sign out of the application?
+      Sair da aplicação?
     </Modal>
   );
 };
@@ -56,7 +56,7 @@ const CallAnalyticsTopNavigation = () => {
     <>
       <div id="top-navigation" style={{ position: 'sticky', top: 0, zIndex: 1002 }}>
         <TopNavigation
-          identity={{ href: '#', title: 'Live Call Analytics with Agent Assist' }}
+          identity={{ href: '#', title: 'Módulo de Inteligência da Octank' }}
           i18nStrings={{ overflowMenuTriggerText: 'More' }}
           utilities={[
             {
@@ -73,29 +73,9 @@ const CallAnalyticsTopNavigation = () => {
                       variant="primary"
                       onClick={() => setIsSignOutModalVisiblesetVisible(true)}
                     >
-                      Sign out
+                      Sair
                     </Button>
                   ),
-                },
-                {
-                  id: 'support-group',
-                  text: 'Resources',
-                  items: [
-                    {
-                      id: 'documentation',
-                      text: 'Blog Post',
-                      href: 'https://www.amazon.com/live-call-analytics',
-                      external: true,
-                      externalIconAriaLabel: ' (opens in new tab)',
-                    },
-                    {
-                      id: 'source',
-                      text: 'Source Code',
-                      href: 'https://github.com/aws-samples/amazon-transcribe-live-call-analytics',
-                      external: true,
-                      externalIconAriaLabel: ' (opens in new tab)',
-                    },
-                  ],
                 },
               ],
             },
