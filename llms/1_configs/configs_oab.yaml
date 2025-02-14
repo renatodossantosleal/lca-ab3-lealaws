@@ -1,0 +1,24 @@
+# Prompts ---------------------------------------------------------------------------
+system_prompts: |
+
+zero_shot_footer: |
+  Retorne apenas a opção correta (que é uma letra em maiúsculo), sem explicação.
+
+chain_of_thought_footer: |
+  Pense primeiro passo a passo dentro das tags <thinking></thinking> e depois responda apenas a opção correta (que é uma letra em maiúsculo) dentro das tags <resposta></resposta>.
+
+prompt_template: |
+  Leia o seguinte enunciado de uma questão da prova da OAB:
+  {utterance}
+
+  Em seguida, selecione uma única alternativa correta e responda apenas com uma das letras \"A\", \"B\", \"C\" ou \"D\"
+  {alternatives}
+
+  {footer}
+
+# Inference Configs ------------------------------------------------------------------
+max_tokens: 1000
+
+# Post Processing ---------------------------------------------------------------------
+min: 1
+max: 1
